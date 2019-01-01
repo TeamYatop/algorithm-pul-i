@@ -1,5 +1,6 @@
 
 # Custom ignores
+.idea/
 
 # Referenced from https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
 ### VSCode ##
