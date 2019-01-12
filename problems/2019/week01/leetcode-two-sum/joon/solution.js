@@ -3,20 +3,19 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
-    previousNumberPositions = new Map();
+// eslint-disable-next-line no-unused-vars
+function twoSum(nums, target) {
+    const previousNumberPositions = new Map();
 
-    for (let iCurrent = 0; iCurrent < nums.length; iCurrent++) {
+    for (let iCurrent = 0; iCurrent < nums.length; iCurrent += 1) {
         const currentNumber = nums[iCurrent];
         const otherNumber = target - nums[iCurrent];
 
         if (otherNumber in previousNumberPositions) {
             const iOther = previousNumberPositions[otherNumber];
             return [iOther, iCurrent];
-
-        } else {
-            previousNumberPositions[currentNumber] = iCurrent;
-
         }
+        previousNumberPositions[currentNumber] = iCurrent;
     }
-};
+    return [];
+}
