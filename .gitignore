@@ -1,6 +1,8 @@
 
 # Custom ignores
 .idea/
+.eslintrc
+.prettierrc
 
 # Referenced from https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
 ### VSCode ##
