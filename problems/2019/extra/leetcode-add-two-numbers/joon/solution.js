@@ -9,36 +9,39 @@ function ListNode(val) {
     this.next = null;
 }
 
-var addTwoNumbers = function(l1, l2) {
-    head = new ListNode(null);
-    prev = head;
-    
-    currNum = 0;
-    carryNum = 0;
-    while (l1 !== null || l2 !== null || carryNum > 0) {
+// eslint-disable-next-line no-unused-vars
+function addTwoNumbers(l1, l2) {
+    const head = new ListNode(null);
+    let list1 = l1;
+    let list2 = l2;
+    let prev = head;
+
+    let currNum = 0;
+    let carryNum = 0;
+    while (list1 !== null || list2 !== null || carryNum > 0) {
         currNum = carryNum;
-        
-        if (l1 !== null) {
-            currNum += l1.val;
-            l1 = l1.next;
+
+        if (list1 !== null) {
+            currNum += list1.val;
+            list1 = list1.next;
         }
-        
-        if (l2 !== null) {
-            currNum += l2.val;
-            l2 = l2.next;
+
+        if (list2 !== null) {
+            currNum += list2.val;
+            list2 = list2.next;
         }
-        
+
         if (currNum >= 10) {
-            currNum = currNum % 10;
+            currNum %= 10;
             carryNum = 1;
         } else {
             carryNum = 0;
         }
-        
-        curr = new ListNode(currNum);
+
+        const curr = new ListNode(currNum);
         prev.next = curr;
         prev = curr;
     }
 
     return head.next;
-};
+}
